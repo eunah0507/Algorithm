@@ -15,6 +15,7 @@ public class Main {
 		// 4. Case #x: A + B = C 문자열에 맞춰 출력한다.
 		
 		Scanner sc = new Scanner(System.in);
+		StringBuffer sb = new StringBuffer();
 		
 		int T = sc.nextInt();
 		
@@ -22,8 +23,16 @@ public class Main {
 			int A = sc.nextInt();
 			int B = sc.nextInt();
 			
-			System.out.print("Case #"+i+": " +A+ " + " + B + " = ");
-			System.out.println(A+B);
+			/*
+			 * System.out.print("Case #"+i+": " +A+ " + " + B + " = ");
+			 * System.out.println(A+B);
+			 */
+			
+			sb.append("Case #"+i+": " +A+ " + " + B + " = ");
+			sb.append(A+B);
+			sb.append("\n");
 		}
+		
+		System.out.println(sb.toString());
 	}
 }
