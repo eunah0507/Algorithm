@@ -13,18 +13,14 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		String str = sc.next();
-		int answer = 1;
-
-		for (int i = 0; i < str.length() / 2; i++) {
-			char first = str.charAt(i);
-			char end = str.charAt(str.length() - 1 - i);
-			if (first != end) {
-				answer = 0;
-				break;
-			} else {
-				answer = 1;
-			}
+		StringBuffer sb = new StringBuffer(str);
+		
+		String reverse = sb.reverse().toString();
+		
+		if (str.equals(reverse)) {
+			System.out.println(1);
+		}else {
+			System.out.println(0);
 		}
-		System.out.println(answer);
 	}
 }
