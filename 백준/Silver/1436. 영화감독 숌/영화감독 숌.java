@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception{
@@ -17,21 +14,22 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        int index = 0;
         int num = sc.nextInt();
-        Integer [] arr = new Integer[5000000];
+        int answer = 0;
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-        for (int i = 0; i < arr.length; i++) {
-            String tmp = "" + i;
-            if (tmp.contains("666")) {
-                arr[i] = i;
-            } else{
-                arr[i] = Integer.MAX_VALUE;
+        while(num != 0){
+            String tmp = "" + index;
+            if(tmp.contains("666")){
+                answer = index;
+                num--;
             }
+
+            index++;
         }
 
-        Arrays.sort(arr);
-
-        System.out.println(arr[num-1]);
+        System.out.println(answer);
     }
 
 }
