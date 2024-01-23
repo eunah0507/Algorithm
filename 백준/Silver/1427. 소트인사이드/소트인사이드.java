@@ -20,9 +20,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        long num = Long.parseLong(br.readLine());
+        int num = Integer.parseInt(br.readLine());
         int index = 1;
-        long number = num;
+        int number = num;
 
         while (true) {
             if (num < 10) {
@@ -33,8 +33,7 @@ public class Main {
             index++;
         }
 
-
-        Long [] arr = new Long[index];
+        Integer [] arr = new Integer[index];
 
         for (int i = 0; i < index; i++) {
             arr[i] = (number % 10);
@@ -43,7 +42,7 @@ public class Main {
 
         Arrays.sort(arr, Collections.reverseOrder());
 
-        for (long i : arr){
+        for (int i : arr){
             sb.append(i);
         }
 
