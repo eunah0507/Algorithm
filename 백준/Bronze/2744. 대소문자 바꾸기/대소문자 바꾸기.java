@@ -15,21 +15,16 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         String str = sc.next();
-        char word = ' ';
-        String wo = "";
-        String answer = "";
 
         for (int i = 0; i < str.length(); i++) {
-            word = str.charAt(i);
-            wo = "" + word;
-            if (word >= 'A' && word <= 'Z'){
-               answer += "" + wo.toLowerCase();
-            }else{
-                answer += wo.toUpperCase();
+            char word = str.charAt(i);
+            if (word >= 'A' && word <= 'Z') {
+                sb.append(Character.toLowerCase(word));
+            } else {
+                sb.append(Character.toUpperCase(word));
             }
         }
 
-        sb.append(answer);
         System.out.println(sb.toString());
     }
 }
