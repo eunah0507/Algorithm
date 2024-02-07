@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         // A @ B = (A+B) * (A-B) 구하기
         // 단, A와 B는 1000 이하여야 한다.
@@ -9,15 +9,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
 
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        int answer = 0;
+        long A = sc.nextLong();
+        long B = sc.nextLong();
 
-        if (A <= 1000 && B <= 1000){
-            answer = (A+B) * (A-B);
-        }
+        
+        sb.append((A + B) * (A - B));
 
-        sb.append(answer);
+        sc.close();
+
         System.out.println(sb.toString());
 
     }
