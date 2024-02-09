@@ -12,17 +12,15 @@ public class Main {
         int num = sc.nextInt();
         int answer = 0;
 
-        while(true){
-            if (num <= 5){
-                break;
-            }
-            
-            num = num - 5;
-            answer++;
+        if (num % 5 != 0){
+            answer = (num / 5) + 1;
+        }else{
+            answer = num / 5;
         }
 
-        sb.append(answer+1);
-        System.out.println(sb.toString());
+       sb.append(answer);
+       System.out.println(sb.toString());
+
 
     }
 }
