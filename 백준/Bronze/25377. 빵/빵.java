@@ -10,7 +10,6 @@ public class Main extends Exception {
         StringBuilder sb = new StringBuilder();
 
         int num = Integer.parseInt(br.readLine());
-        // int [] arriveTime = new int [num];
         int earlyBread = Integer.MAX_VALUE;
 
         for (int i = 0; i < num; i++) {
@@ -20,12 +19,14 @@ public class Main extends Exception {
 
             if (arriveTime <= breadTime) {
                 earlyBread = Math.min(earlyBread, breadTime);
-            }else {
-                earlyBread = -1;
             }
         }
-        sb.append(earlyBread);
 
+        if (earlyBread == Integer.MAX_VALUE){
+            earlyBread = -1;
+        }
+
+        sb.append(earlyBread);
         System.out.println(sb.toString());
     }
 }
