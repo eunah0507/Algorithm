@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -13,10 +14,11 @@ public class Main {
         int numA = Integer.parseInt(st.nextToken());
         int numB = Integer.parseInt(st.nextToken());
 
-        Long a = Long.parseLong(br.readLine());
-        Long b = Long.parseLong(br.readLine());
-
-        Long answer = a * b;
+        BigInteger a = new BigInteger(br.readLine());
+        BigInteger b = new BigInteger(br.readLine());
+        
+        BigInteger answer = a.multiply(b);
+        
         sb.append(answer);
         System.out.println(sb.toString());
     }
