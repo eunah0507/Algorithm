@@ -1,28 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-	public static void main(String[] args) {		
-		// 각이 예각인지 직각인지 둔각인지 출력하는 문제
-		
-		// 1. 테스트케이스 int 3개를 받아온다.
-		// 2. if문을 돌려서 각각 상황에 맞게 출력한다.
-		
-		Scanner sc = new Scanner(System.in);
-		
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		int c = sc.nextInt();
-		
-		if (a + b + c == 180 && a == b && b == c) {
-			System.out.println("Equilateral");
-		}else if (a + b + c == 180 && a == b || a == c || b == c) {
-			System.out.println("Isosceles");
-		}else if (a + b + c == 180 && a != b && b != c) {
-			System.out.println("Scalene");
-		}else if (a + b + c != 180) {
-			System.out.println("Error");
-		}
-	}
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+
+        int numA = Integer.parseInt(br.readLine());
+        int numB = Integer.parseInt(br.readLine());
+        int numC = Integer.parseInt(br.readLine());
+
+        int sumABC = numA + numB + numC;
+
+        if (numA == 60 && numA == numB && numB == numC){
+            sb.append("Equilateral").append("\n");
+        }else if(sumABC == 180 && ((numA == numB) && (numA != numC))) {
+            sb.append("Isosceles").append("\n");
+        } else if (sumABC == 180 && ((numC == numB) && (numA != numC))) {
+            sb.append("Isosceles").append("\n");
+        } else if (sumABC == 180 && ((numC == numA) && (numB != numC))){
+            sb.append("Isosceles").append("\n");
+        }else if (sumABC == 180 && numA != numB){
+            sb.append("Scalene").append("\n");
+        } else if (sumABC != 180) {
+            sb.append("Error").append("\n");
+        }
+
+        System.out.println(sb.toString());
+    }
 }
