@@ -11,7 +11,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         int num = Integer.parseInt(br.readLine());
-        int answer = 0;
+        int index = 0;
 
         for (int i = 0; i < num; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
@@ -20,22 +20,15 @@ public class Main {
             int right = Integer.parseInt(st.nextToken());
             int startPoint = Integer.parseInt(st.nextToken());
 
-            int index = 1;
-
-            while (true){
-                if (startPoint == left || startPoint == right){
-                    break;
-                }else{
-                    if (index % 2 == 0){
-                        startPoint -= index;
-                    }else{
-                        startPoint += index;
-                    }
-
-                    index++;
-                }
+            int letfToStart = startPoint - left;
+            int rightToStart = right - startPoint;
+            
+            if (letfToStart < rightToStart){
+                index = letfToStart * 2 + 1;
+            }else {
+                index = 2 * rightToStart;
             }
-
+            
             sb.append(index).append("\n");
         }
 
