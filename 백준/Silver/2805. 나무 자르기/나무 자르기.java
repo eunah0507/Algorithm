@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int n = Integer.parseInt(st.nextToken());
@@ -15,6 +16,7 @@ public class Main {
         int max = 0;
         for (int i = 0; i < n; i++) {
             trees[i] = Integer.parseInt(st.nextToken());
+
             if (trees[i] > max) {
                 max = trees[i];
             }
@@ -22,26 +24,27 @@ public class Main {
 
         int left = 0;
         int right = max;
-        int height = 0;
+        int answer = 0;
 
         while (left <= right) {
-            int mid = (left + right) / 2;
+            int height = (left + right) / 2;
             long sum = 0;
 
             for (int i = 0; i < n; i++) {
-                if (trees[i] > mid) {
-                    sum += (trees[i] - mid);
+                if (trees[i] > height) {
+                    sum += (trees[i] - height);
                 }
             }
 
             if (sum >= m) {
-                height = mid;
-                left = mid + 1;
+                answer = height;
+                left = height + 1;
             } else {
-                right = mid - 1;
+                right = height - 1;
             }
         }
 
-        System.out.println(height);
+        sb.append(answer);
+        System.out.println(sb.toString());
     }
 }
