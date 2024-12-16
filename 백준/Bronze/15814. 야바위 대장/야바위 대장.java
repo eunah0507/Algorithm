@@ -22,13 +22,9 @@ public class Main {
 
             String tmp = "";
 
-            for (int j = 0; j < str.length(); j++) {
-                if (j == numA){
-                    tmp = line[numA];
-                    line[numA] = line[numB];
-                    line[numB] = tmp;
-                }
-            }
+            tmp = line[numA];
+            line[numA] = line[numB];
+            line[numB] = tmp;
         }
 
         for (String s : line) {
