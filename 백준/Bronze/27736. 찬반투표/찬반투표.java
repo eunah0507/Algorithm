@@ -29,21 +29,13 @@ public class Main {
             }
         }
 
-        int numM = 0;
+        int numM = (num + 1) / 2;
 
-        if (num % 2 != 0){
-            numM = (num / 2) + 1;
-        }else{
-            numM = num / 2;
-        }
-
-        if (numI >= numM){
+        if (numI >= numM) {
             answer = "INVALID";
-        }
-
-        if (numA > numR){
+        } else if (numA > numR) {
             answer = "APPROVED";
-        }else{
+        } else {
             answer = "REJECTED";
         }
 
