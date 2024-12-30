@@ -1,41 +1,42 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        // 맨 앞글자가 모음이 아닐때 까지 맨 앞 글자를 어미로 들린 후
-        // 그 끝에 ay를 붙여서 완성한다.
-        // frog > rogf > ogfr > ogfray
-        // apple > appleay
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
         while (true) {
+            Deque<Character> deque = new ArrayDeque<>();
+
             String str = br.readLine();
-            String isMo = "";
-            String isJa = "";
-            String answer = "";
+            String remain = "";
 
             if (str.equals("#")) {
                 break;
             } else {
                 for (int i = 0; i < str.length(); i++) {
-                    char ch = str.charAt(i);
-
-                    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                        isMo = String.valueOf(ch) + str.substring(i + 1);
+                    if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u'){
+                        remain = str.substring(i);
                         break;
-                    } else {
-                        isJa += String.valueOf(ch);
+                    }else{
+                        deque.addLast(str.charAt(i));
                     }
                 }
             }
 
-            answer = isMo + isJa + "ay";
-            sb.append(answer).append("\n");
+            sb.append(remain);
+            
+            while (!deque.isEmpty()){
+                sb.append(deque.pollFirst());
+            }
+
+            sb.append("ay").append("\n");
         }
-        
+
         System.out.println(sb.toString());
     }
 }
