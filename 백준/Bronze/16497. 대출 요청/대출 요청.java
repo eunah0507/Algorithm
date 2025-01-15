@@ -25,9 +25,8 @@ public class Main {
             }
         }
 
-        Arrays.sort(arr);
-
         int book = Integer.parseInt(br.readLine());
+        
         int maxLoan = 0;
 
         for (int i = 1; i <= 31; i++) {
