@@ -14,7 +14,6 @@ public class Main {
         // 10 3 > 14 > 10마리 >> 3마리 + 1장 >> 1마리 >> 14마리
         // 100 5 > 124 > 100마리 + 쿠폰 25장 >> 20마리 >> 4마리 >> 124마리
 
-
         String str = "";
         while ((str = br.readLine()) != null && !str.isEmpty()){
             StringTokenizer st = new StringTokenizer(str);
