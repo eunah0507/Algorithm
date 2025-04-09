@@ -7,7 +7,7 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 
-		int n = Integer.parseInt(br.readLine());
+		int num = Integer.parseInt(br.readLine());
 
 		String[] aTokens = br.readLine().split(" ");
 		String[] bTokens = br.readLine().split(" ");
@@ -15,7 +15,7 @@ public class Main {
 		int total = 0;
 		int unregistered = 0;
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < num; i++) {
 			int interest = Integer.parseInt(aTokens[i]);
 			int isRegistered = Integer.parseInt(bTokens[i]);
 
