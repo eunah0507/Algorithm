@@ -4,6 +4,7 @@ import java.io.IOException;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
+        
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 
@@ -11,22 +12,21 @@ public class Main {
 
 		String[] aTokens = br.readLine().split(" ");
 		String[] bTokens = br.readLine().split(" ");
-
-		int total = 0;
+		int answer = 0;
 		int unregistered = 0;
 
+        
 		for (int i = 0; i < num; i++) {
 			int interest = Integer.parseInt(aTokens[i]);
 			int isRegistered = Integer.parseInt(bTokens[i]);
 
-			total += interest;
-
+			answer += interest;
 			if (isRegistered == 0) {
 				unregistered += interest;
 			}
 		}
 
-		sb.append(total).append('\n').append(unregistered);
+		sb.append(answer).append('\n').append(unregistered);
 		System.out.println(sb.toString());
 	}
 }
