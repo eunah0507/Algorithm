@@ -1,8 +1,40 @@
-# eunah_-algorithm
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+# 💫 알고리즘 공부
 
-[ 다짐 ]
-- 매일 문제 풀기
-- 백준 단계별 풀기(브론즈 5단계부터 각 150문제씩 풀 예정)
-- 인프런 : 자바(Java) 알고리즘 문제풀이 입문: 코딩테스트 대비 강의 보면서 문제 풀기
+BaekjoonHub를 활용한 알고리즘 문제풀이 기록용 레포지토리입니다.  
+꾸준한 문제풀이와 학습을 통해 알고리즘 실력을 탄탄히 다져가고 있습니다.
 
+---
+
+## 📌 목표
+- **매일 최소 1문제 이상 풀이**
+- **백준 단계별 문제 풀이**
+  - 브론즈 5단계부터 시작하여 **각 단계당 60문제씩** 풀이 (브론즈 완료 후 실버 단계로 진입 예정)
+  - 브론즈 5 ~ 2단계는 각 150문제씩 풀이 완료
+- **인프런 강의 기반 학습**
+  - [자바(Java) 알고리즘 문제풀이 입문: 코딩테스트 대비 강의](https://www.inflearn.com/course/자바-java-알고리즘-문제풀이-입문) 수강하며 실습 문제 풀이
+- Velog에 풀이 및 개념 정리
+
+---
+
+## 🛠 사용하는 플랫폼
+| 플랫폼 | 설명 |
+|--------|------|
+| [백준(Baekjoon)](https://www.acmicpc.net/) | 주력 풀이 플랫폼, 단계별로 체계적 풀이 진행 중 |
+| [프로그래머스(Programmers)](https://programmers.co.kr/) | 가끔 실전 문제 풀이용으로 활용 |
+| [인프런(Inflearn)](https://www.inflearn.com/) | 알고리즘 개념 및 실전 문제 풀이 강의 학습 |
+
+---
+
+## 📂 디렉토리 구조
+```bash
+📁 Algorithm/
+├── SWEA/                                
+├── 백준/                                 
+├── 인프런 - 자바(JAVA) 알고리즘/
+│   
+├── 인프런 알고리즘/                    
+├── 프로그래머스/
+│   
+│       
+└── README.md
+```
