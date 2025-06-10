@@ -6,11 +6,9 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         int num = Integer.parseInt(br.readLine());
-        
         long result = (long) num * (num + 1) / 2;
         
         sb.append(result).append("\n");
-
         System.out.println(sb.toString());
     }
 }
