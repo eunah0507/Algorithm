@@ -3,10 +3,12 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        // git 왜 안올라가지
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
         while (true) {
+           
             StringTokenizer st = new StringTokenizer(br.readLine());
             int numA = Integer.parseInt(st.nextToken());  
             int numB = Integer.parseInt(st.nextToken());  
