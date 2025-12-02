@@ -8,27 +8,17 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         int num = Integer.parseInt(br.readLine());
-        String [] arr = new String[num];
-
-        int yonsei = 0;
-        int korea = 0;
 
         for (int i = 0; i < num; i++) {
-            arr[i] = br.readLine();
+            String str = br.readLine();
 
-            if (arr[i].equals("yonsei")){
-                yonsei = i;
+            if (str.equals("yonsei")){
+                sb.append("Yonsei Won!");
+                break;
+            }else if (str.equals("korea")){
+                sb.append("Yonsei Lost...");
+                break;
             }
-
-            if (arr[i].equals("korea")){
-                korea = i;
-            }
-        }
-
-        if (yonsei < korea){
-            sb.append("Yonsei Won!");
-        }else{
-            sb.append("Yonsei Lost...");
         }
 
         System.out.println(sb.toString());
