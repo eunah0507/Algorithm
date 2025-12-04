@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
-
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         long maxFirst = 0L;
@@ -25,6 +24,7 @@ public class Main {
         }
 
         long ans = maxFirst + 1;
+        
         if (ans < last) {
             ans = last;
         }
