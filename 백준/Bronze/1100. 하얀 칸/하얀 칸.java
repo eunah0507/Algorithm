@@ -1,22 +1,23 @@
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        boolean isWhite = true;
+        StringBuilder sb = new StringBuilder();
+
         int count = 0;
 
-        for (int i = 0; i < 8 ; i++) {
-            String str = br.readLine();
-            isWhite = i % 2 == 0;
+        for (int i = 0; i < 8; i++) {
+            String line = br.readLine();
             for (int j = 0; j < 8; j++) {
-                if(isWhite && str.charAt(j)=='F') count++;
-                isWhite = !isWhite;
+                if (((i + j) % 2 == 0) && line.charAt(j) == 'F') {
+                    count++;
+                }
             }
         }
-        System.out.println(count);
+
+        sb.append(count);
+        System.out.print(sb.toString());
     }
 }
