@@ -3,6 +3,8 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        
         int price = Integer.parseInt(br.readLine());
         int change = 1000 - price;
 
@@ -13,7 +15,8 @@ public class Main {
             count += change / coin;
             change %= coin;
         }
-
-        System.out.println(count);
+        
+        sb.append(count);
+        System.out.println(sb.toString());
     }
 }
