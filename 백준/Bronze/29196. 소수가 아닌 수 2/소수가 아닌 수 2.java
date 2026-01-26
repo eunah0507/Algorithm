@@ -1,37 +1,45 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.math.BigDecimal;
-import java.math.MathContext;
 
 public class Main {
+    private static long gcd(long a, long b) {
+        while (b != 0) {
+            long t = a % b;
+            a = b;
+            b = t;
+        }
+        return a;
+    }
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        BigDecimal k = new BigDecimal(br.readLine());
-        BigDecimal eps = new BigDecimal("1e-6");
+        String s = br.readLine().trim();
 
-        boolean found = false;
-        int maxQ = 1_000_000;
-        for (int q = 1; q <= maxQ; q++) {
-            BigDecimal bigQ = new BigDecimal(q);
-            BigDecimal pDecimal = k.multiply(bigQ);
-            BigDecimal p = pDecimal.setScale(0, BigDecimal.ROUND_HALF_UP);  
+        int dot = s.indexOf('.');
+        long p;
+        long q;
 
-            BigDecimal actual = p.divide(bigQ, 15, BigDecimal.ROUND_HALF_UP);
-            BigDecimal diff = actual.subtract(k).abs();
-
-            if (diff.compareTo(eps) <= 0) {
-                sb.append("YES\n").append(p.toBigInteger()).append(" ").append(q);
-                found = true;
-                break;
+        if (dot == -1) {
+            p = Long.parseLong(s);
+            q = 1L;
+        } else {
+            String frac = s.substring(dot + 1);
+            q = 1L;
+            for (int i = 0; i < frac.length(); i++) {
+                q *= 10L;
             }
+            String digits = s.substring(0, dot) + frac;
+            p = Long.parseLong(digits);
         }
 
-        if (!found) {
-            sb.append("NO");
-        }
+        long g = gcd(p, q);
+        p /= g;
+        q /= g;
 
-        System.out.println(sb.toString());
+        sb.append("YES\n");
+        sb.append(p).append(' ').append(q).append('\n');
+        System.out.print(sb.toString());
     }
 }
