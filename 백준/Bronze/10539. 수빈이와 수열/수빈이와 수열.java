@@ -25,6 +25,7 @@ public class Main {
             sb.append(a);
         }
 
+        
         System.out.println(sb.toString());
     }
 }
