@@ -1,0 +1,6 @@
+5
+com/put1/put2
+http://def.exe
+my.dad.exe/put
+nesto.bat
+http://my.mom.com
